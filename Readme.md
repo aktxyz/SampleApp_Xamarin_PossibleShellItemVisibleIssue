@@ -18,7 +18,10 @@ This app shoes some inconsistent behavior with Shell Item visibility between IOS
 
 This has all been using the latest (as of 8/20/2020) Xamarin goodies v4.8.0.1269.
 
-The AppShell.xaml has the IsVisible property for some tabs bound IsMode1 and IsMode2 boolean properties.
+The AppShell.xaml has the IsVisible property for some tabs bound to IsMode1 and IsMode2 boolean properties.
+
+- <https://github.com/aktxyz/SampleApp_Xamarin_PossibleShellItemVisibleIssue/blob/master/App6/App6/AppShell.xaml#L48>
+- <https://github.com/aktxyz/SampleApp_Xamarin_PossibleShellItemVisibleIssue/blob/master/App6/App6/AppShell.xaml#L54>
 
 These props are then flipped in event handlers here
 
