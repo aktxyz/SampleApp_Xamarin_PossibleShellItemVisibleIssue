@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="App6.AppShell"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:App6.Views"
+    Title="App6">
+
+    <!--
+        The overall app visual hierarchy is defined here, along with navigation.
+        
+        https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/
+    -->
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="Shell.ForegroundColor" Value="White" />
+                <Setter Property="Shell.TitleColor" Value="White" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="White" />
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarTitleColor" Value="White" />
+            </Style>
+            <Style BasedOn="{StaticResource BaseStyle}" TargetType="TabBar" />
+            <Style BasedOn="{StaticResource BaseStyle}" TargetType="FlyoutItem" />
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <TabBar>
+        <ShellContent
+            Title="ABOUT"
+            ContentTemplate="{DataTemplate local:AboutPage}"
+            Icon="tab_about.png"
+            Route="AboutPage" />
+        <ShellContent
+            Title="LOGIN"
+            ContentTemplate="{DataTemplate local:LoginPage}"
+            Icon="tab_feed.png" />
+
+        <ShellContent
+            Title="MODE1"
+            ContentTemplate="{DataTemplate local:AboutPage}"
+            Icon="tab_feed.png"
+            IsVisible="{Binding IsMode1}" />
+
+        <ShellContent
+            Title="MODE2"
+            ContentTemplate="{DataTemplate local:AboutPage}"
+            Icon="tab_feed.png"
+            IsVisible="{Binding IsMode2}" />
+
+    </TabBar>
+
+    <ShellContent
+        ContentTemplate="{DataTemplate local:LoginPage}"
+        Route="LoginPage"
+        Shell.FlyoutBehavior="Disabled" />
+
+</Shell>
